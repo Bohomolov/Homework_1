@@ -126,41 +126,48 @@ public class ConditionsTest {
 //////////////////////////////_4th_method_end_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////_5th_method_start_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     @Test
-    public void testRating_1() {
+    public void testShowRating_1() {
         Conditions cond = new Conditions();
         String expected = "F";
-        String actual = cond.rating(19);
+        String actual = cond.showRating(19);
         Assertions.assertEquals(expected, actual);
     }   @Test
-    public void testRating_2() {
+    public void testShowRating_2() {
         Conditions cond = new Conditions();
         String expected = "E";
-        String actual = cond.rating(39);
+        String actual = cond.showRating(39);
         Assertions.assertEquals(expected, actual);
     }   @Test
-    public void testRating_3() {
+    public void testShowRating_3() {
         Conditions cond = new Conditions();
         String expected = "D";
-        String actual = cond.rating(59);
+        String actual = cond.showRating(59);
         Assertions.assertEquals(expected, actual);
     }   @Test
-    public void testRating_4() {
+    public void testShowRating_4() {
         Conditions cond = new Conditions();
         String expected = "C";
-        String actual = cond.rating(74);
+        String actual = cond.showRating(74);
         Assertions.assertEquals(expected, actual);
     }   @Test
-    public void testRating_5() {
+    public void testShowRating_5() {
         Conditions cond = new Conditions();
         String expected = "B";
-        String actual = cond.rating(80);
+        String actual = cond.showRating(80);
         Assertions.assertEquals(expected, actual);
     }   @Test
-    public void testRating_6() {
+    public void testShowRating_6() {
         Conditions cond = new Conditions();
         String expected = "A";
-        String actual = cond.rating(99);
+        String actual = cond.showRating(99);
         Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void testShowRating_exception() {
+        final Conditions cond = new Conditions();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+           cond.showRating(-100);
+        }, "Incorrect value, correct value [0 - 100]");
     }
 }
 //////////////////////////////_testing_end_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
