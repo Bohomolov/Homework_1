@@ -4,7 +4,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class ArraysTest {
-//////////////////////////////_1st_method_start_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//#=============================_1st_method_start_===================================
     @Test
     public void testFindMinElementOfArray() {
         Arrays arrays = new Arrays();

@@ -1,5 +1,5 @@
 public class Arrays {
-
+    //#=====================================_1ST_===========================================
     public int findMinElementOfArray(int[] array) {
         int result = array[0];
         for (int i = 0; i < array.length; i++) {
@@ -10,7 +10,7 @@ public class Arrays {
         return result;
     }
 
-
+    //#=====================================_2ND_==========================================
     public int findMaxElementOfArray(int[] array) {
         int result = array[0];
         for (int i = 0; i < array.length; i++) {
@@ -20,7 +20,7 @@ public class Arrays {
         }
         return result;
     }
-
+    //#=====================================_3RT_==========================================
     public int findIndexMinElementOfArray(int array[]) {
         int result = 0;
         for (int i = 0; i < array.length; i++) {
@@ -30,7 +30,7 @@ public class Arrays {
         }
         return result;
     }
-
+    //#=====================================_4TH_==========================================
     public int findIndexOfMaxElementOfArray(int[] array) {
         int result = 0;
         for (int i = 0; i < array.length; i++) {
@@ -40,7 +40,7 @@ public class Arrays {
         }
         return result;
     }
-
+    //#=====================================_5TH_==========================================
     public int countSumOfArray(int[] a) {
         int result = 0;
         for (int i = 0; i < a.length; i++) {
@@ -50,7 +50,7 @@ public class Arrays {
         }
         return result;
     }
-
+    //#=====================================_6TH_==========================================
     public int[] reverseArray(int[] array) {
         int[] result = new int[array.length];
         int back = array.length - 1;
@@ -63,7 +63,7 @@ public class Arrays {
         }
         return array;
     }
-
+    //#=====================================_7TH_==========================================
     public int showNoEven(int[] array) {
         int result = 0;
         for (int i = 0; i < array.length; i++) {
@@ -73,7 +73,7 @@ public class Arrays {
         }
         return result;
     }
-
+    //#=====================================_8TH_==========================================
     public int[] changer(int[] array) {
         int[] result = new int[array.length];
         int half = array.length / 2;
@@ -96,7 +96,7 @@ public class Arrays {
         }
         return array;
     }
-
+    //#=====================================_9TH_==========================================
     public int[] bubbleSort(int[] array) {
         for (int i = array.length; i > 0; i--) {
             for (int j = 0; j < array.length - 1; j++) {
@@ -109,4 +109,5 @@ public class Arrays {
         }
         return array;
     }
+    //#=====================================_10TH_==========================================
 }
