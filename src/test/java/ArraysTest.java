@@ -4,7 +4,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class ArraysTest {
-//#=============================_1st_method_start_===================================
+    //#=============================_1st_method_start_===================================
     @Test
     public void testFindMinElementOfArray() {
         Arrays arrays = new Arrays();
@@ -14,8 +14,8 @@ public class ArraysTest {
         assertEquals(expected, actual);
     }
 
-//////////////////////////////_1st_method_end_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//////////////////////////////_2nd_method_start_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    //============================_1st_method_end_=================================================
+    //============================_2nd_method_start_===============================================
     @Test
     public void testFindMaxElementOfArray() {
         Arrays arrays = new Arrays();
@@ -26,29 +26,30 @@ public class ArraysTest {
 
     }
 
-//////////////////////////////_2nd_method_end_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//////////////////////////////_3rd_method_start_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    //============================_2nd_method_end_==================================================
+    // ============================_3rd_method_start_================================================
     @Test
     public void testFindIndexOfMinElementOfArray() {
         Arrays arrays = new Arrays();
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 0, 9};
         int expected = 17;
-        int actual = arrays.findIndexMinElementOfArray(array);
+        int actual = arrays.findIndexOFMinElementOfArray(array);
         assertEquals(expected, actual);
     }
 
-//////////////////////////////_3rd_method_end_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//////////////////////////////_4th_method_start_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    //============================_3rd_method_end_===================================================
+    //============================_4th_method_start_===================================================
     @Test
-    public void testFindIndexOfMaxElementOfArray(){
+    public void testFindIndexOfMaxElementOfArray() {
         Arrays arrays = new Arrays();
-        int [] array = {1,2,3,4,5,6,7,8,9,10};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int expected = 9;
         int actual = arrays.findIndexOfMaxElementOfArray(array);
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
-//////////////////////////////_4th_method_end_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-//////////////////////////////_5th_method_start_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    //============================_4th_method_end_==================================================
+    //============================_5th_method_start_==================================================
     @Test
     public void countSumOfArray() {
         Arrays arrays = new Arrays();
@@ -58,6 +59,8 @@ public class ArraysTest {
         assertEquals(expected, actual);
     }
 
+    //============================_5th_method_end_==================================================
+    //============================_6th_method_start_================================================
     @Test
     public void testReverseArray_1() {
         Arrays arrays = new Arrays();
@@ -67,6 +70,8 @@ public class ArraysTest {
         assertArrayEquals(expected, actual);
     }
 
+    //============================_6th_method_end_==================================================
+    // ============================_7th_method_start_================================================
     @Test
     public void showNoEven() {
         Arrays arrays = new Arrays();
@@ -75,7 +80,8 @@ public class ArraysTest {
         int actual = arrays.showNoEven(array);
         assertEquals(expected, actual);
     }
-
+    //============================_7th_method_end_==================================================
+    //============================_8th_method_start_================================================
     @Test
     public void changer() {
         Arrays arrays = new Arrays();
@@ -84,7 +90,8 @@ public class ArraysTest {
         int[] actual = arrays.changer(array);
         assertArrayEquals(expected, actual);
     }
-
+    //============================_8th_method_end_==================================================
+    //============================_9th_method_start_================================================
     @Test
     public void bubbleSort() {
         Arrays arrays = new Arrays();
@@ -93,4 +100,6 @@ public class ArraysTest {
         int[] expected = {1, 2, 3, 5, 7, 8, 9, 10};
         assertArrayEquals(expected, actual);
     }
+    //============================_9th_method_end_==================================================
+    //============================_10th_method_start_================================================
 }

@@ -21,7 +21,7 @@ public class Arrays {
         return result;
     }
     //#=====================================_3RT_==========================================
-    public int findIndexMinElementOfArray(int array[]) {
+    public int findIndexOFMinElementOfArray(int array[]) {
         int result = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[result] > array[i]) {
