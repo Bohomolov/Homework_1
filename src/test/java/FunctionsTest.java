@@ -34,6 +34,12 @@ public class FunctionsTest {
             functions.convertNumberToString(45 - 789);
         }, "Incorrect value! The number should be equals 1 or more.");
     }
+    @Test
+    public void testShowDayOfTheWeek_exception_0() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            functions.convertNumberToString(0);
+        }, "Incorrect value! The number should be equals 1 or more.");
+    }
     //============================_1st_method_end_=================================================
     //============================_2nd_method_start_===============================================
 
@@ -169,6 +175,12 @@ public class FunctionsTest {
         String actual = functions.convertNumberToString(500);
         assertEquals(expected, actual);
     }
+    @Test
+    public void convertToString_719() {
+        String expected = "Seven hundred Nineteen ";
+        String actual = functions.convertNumberToString(719);
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void convertToString_400() {
@@ -196,5 +208,25 @@ public class FunctionsTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             functions.convertNumberToString(45 - 789);
         }, "Incorrect value! The number should be equals 1 or more.");
+    }
+    @Test
+    public void testReverseNumeral_exception_0() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            functions.convertNumberToString(0);
+        }, "Incorrect value! The number should be equals 1 or more.");
+    }
+    //============================_2nd_method_end_==================================================
+    //============================_3rd_method_start_===============================================
+    @Test
+    public void convertStringToNumber_1() {
+        String expected = "1";
+        String actual = functions.convertStringToNumber("One ");
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void convertStringToNumber_17() {
+        String expected = "17";
+        String actual = functions.convertStringToNumber("Seventeen ");
+        assertEquals(expected, actual);
     }
 }
