@@ -18,9 +18,9 @@ public class Conditions {
             result = "Your point between III and IV quarter";
         } else if (x == 0 && y > 0) {
             result = "Your point between I and II quarter";
-        } else if (x > 0 && y == 0) {
+        } else if (x > 0) {
             result = "Your point between I and IV quarter";
-        } else if (x < 0 && y == 0) {
+        } else if (x < 0) {
             result = "Your point between II and III quarter";
         } else {
             result = "Your point equals O:O";
@@ -58,8 +58,8 @@ public class Conditions {
         if (argument < 0 || argument > 100 ){
            throw new IllegalArgumentException("Incorrect value, correct value [0 - 100]");
         }
-        String result ="";
-        if (argument >= 0 && argument <= 19) {
+        String result;
+        if (argument <= 19) {
             result = "F";
         } else if ( argument <= 39) {
             result = "E";
@@ -69,7 +69,7 @@ public class Conditions {
             result = "C";
         } else if ( argument <= 89) {
             result = "B";
-        } else if ( argument <= 100) {
+        } else {
             result = "A";
         }
         return result;

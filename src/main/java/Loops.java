@@ -7,19 +7,23 @@ public class Loops {
             sum += i;
             quantity += 1;
         }
-       return  "Sum = " + sum + " Quantity = " + quantity;
+        return "Sum = " + sum + " Quantity = " + quantity;
     }
+
     //#=====================================_2ND_==========================================
     public String checkIsNumberPrime(int argument) {
         String resultPrime = "";
-        if (argument <= 0) {
+        if (argument == 1){
+            resultPrime = "This number isn't prime";
+        }
+        if (argument < 1) {
             throw new IllegalArgumentException("Incorrect value! The number should be equals 2 or more.");
         }
         int i = 2;
         while (i <= argument) {
             if (argument % i != 0) {
                 i++;
-            } else if (argument % i == 0) {
+            } else {
                 if (argument == i) {
                     resultPrime = "This number is prime";
                 } else {
@@ -30,19 +34,24 @@ public class Loops {
         }
         return resultPrime;
     }
+
     //#=====================================_3RT_==========================================
-    public int findSqrt(int argument) {
+    public String findSqrt(int argument) {
         if (argument <= 0) {
             throw new IllegalArgumentException("Incorrect value! The number should be equals 1 or more.");
         }
-        int resultSqrt = 0;
+        String resultSqrt = "";
         for (int i = 1; i <= argument; i++) {
             if (i * i == argument) {
-                resultSqrt = i;
+                resultSqrt += i;
             }
+        }
+        if (resultSqrt.equals("")){
+            resultSqrt = "This number has no square.";
         }
         return resultSqrt;
     }
+
     //#=====================================_4TH_==========================================
     public int countFactorial(int argument) {
         if (argument <= 0) {
@@ -54,6 +63,7 @@ public class Loops {
         }
         return result;
     }
+
     //#=====================================_5TH_==========================================
     public int countSumOfDigits(int argument) {
         if (argument < 0) {
@@ -66,6 +76,7 @@ public class Loops {
         }
         return result;
     }
+
     //#=====================================_6TH_==========================================
     public String reverseNumeral(int argument) {
         if (argument <= 0) {

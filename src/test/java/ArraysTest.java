@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ArraysTest {
     Arrays arrays = new Arrays();
+
     //#=============================_1st_method_start_===================================
     @Test
     public void testFindMinElementOfArray() {
@@ -16,24 +17,41 @@ public class ArraysTest {
     }
 
     @Test
+    public void testFindMinElementOfArray_1() {
+        int[] array = {1};
+        int expected = 1;
+        int actual = arrays.findMinElementOfArray(array);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFindMinElementOfArray_1_1() {
+        int[] array = {2};
+        int expected = 2;
+        int actual = arrays.findMinElementOfArray(array);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testFindMinElementOfArray_2() {
-        int[] a = {0};
+        int[] array = {0};
         int expected = 0;
-        int actual = arrays.findMinElementOfArray(a);
+        int actual = arrays.findMinElementOfArray(array);
         assertEquals(expected, actual);
     }
 
     @Test
     public void testFindMinElementOfArray_3() {
-        int[] a = {-1, 223, 8, -9, 7, 42, -49, -577, 56};
+        int[] array = {-1, 223, 8, -9, 7, 42, -49, -577, 56};
         int expected = -577;
-        int actual = arrays.findMinElementOfArray(a);
+        int actual = arrays.findMinElementOfArray(array);
         assertEquals(expected, actual);
     }
+
     @Test
     public void testFindMinElementOfArray_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-           arrays.findMinElementOfArray(null);
+            arrays.findMinElementOfArray(null);
         }, "Array cannot be is empty.");
     }
 
@@ -43,6 +61,27 @@ public class ArraysTest {
     public void testFindMaxElementOfArray() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 10, 4, 3, 4, 2, 1, 3};
         int expected = 10;
+        int actual = arrays.findMaxElementOfArray(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testFindMaxElementOfArray_1() {
+        int[] array = {1};
+        int expected = 1;
+        int actual = arrays.findMaxElementOfArray(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testFindMaxElementOfArray_1_1() {
+        int[] array = {2};
+        int expected = 2;
+        int actual = arrays.findMaxElementOfArray(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testFindMaxElementOfArray_0() {
+        int[] array = {0};
+        int expected = 0;
         int actual = arrays.findMaxElementOfArray(array);
         assertEquals(expected, actual);
     }
@@ -62,13 +101,13 @@ public class ArraysTest {
         int actual = arrays.findMaxElementOfArray(array);
         assertEquals(expected, actual);
     }
+
     @Test
     public void testFindMaxElementOfArray_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             arrays.findMaxElementOfArray(null);
         }, "Array cannot be is empty.");
     }
-
 
     //============================_2nd_method_end_==================================================
     // ============================_3rd_method_start_===============================================
@@ -79,7 +118,27 @@ public class ArraysTest {
         int actual = arrays.findIndexOFMinElementOfArray(array);
         assertEquals(expected, actual);
     }
-
+    @Test
+    public void testFindIndexOfMinElementOfArray_1() {
+        int[] array = {1};
+        int expected = 0;
+        int actual = arrays.findIndexOFMinElementOfArray(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testFindIndexOfMinElementOfArray_1_1() {
+        int[] array = {2};
+        int expected = 0;
+        int actual = arrays.findIndexOFMinElementOfArray(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testFindIndexOfMinElementOfArray_0() {
+        int[] array = {0};
+        int expected = 0;
+        int actual = arrays.findIndexOFMinElementOfArray(array);
+        assertEquals(expected, actual);
+    }
     @Test
     public void testFindIndexOfMinElementOfArray_2() {
         int[] array = {0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 10, 9};
@@ -95,6 +154,7 @@ public class ArraysTest {
         int actual = arrays.findIndexOFMinElementOfArray(array);
         assertEquals(expected, actual);
     }
+
     @Test
     public void testFindIndexOfMinElementOfArray_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -119,6 +179,7 @@ public class ArraysTest {
         int actual = arrays.findIndexOfMaxElementOfArray(array);
         assertEquals(expected, actual);
     }
+
     @Test
     public void testFindIndexOfMaxElementOfArray_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -135,7 +196,33 @@ public class ArraysTest {
         int actual = arrays.countSumOfArray(array);
         assertEquals(expected, actual);
     }
-
+    @Test
+    public void countSumOfArray_1() {
+        int[] array = {1};
+        int expected = 0;
+        int actual = arrays.countSumOfArray(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void countSumOfArray_1_1() {
+        int[] array = {0,1};
+        int expected = 1;
+        int actual = arrays.countSumOfArray(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void countSumOfArray_1_2() {
+        int[] array = {0,2};
+        int expected = 2;
+        int actual = arrays.countSumOfArray(array);
+        assertEquals(expected, actual);
+    }  @Test
+    public void countSumOfArray_1_3() {
+        int[] array = {2};
+        int expected = 0;
+        int actual = arrays.countSumOfArray(array);
+        assertEquals(expected, actual);
+    }
     @Test
     public void countSumOfArray_2() {
         int[] array = {0};
@@ -151,6 +238,7 @@ public class ArraysTest {
         int actual = arrays.countSumOfArray(array);
         assertEquals(expected, actual);
     }
+
     @Test
     public void testCountSumOfArray_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -160,6 +248,41 @@ public class ArraysTest {
 
     //============================_5th_method_end_==================================================
     //============================_6th_method_start_================================================
+    @Test
+    public void testReverseArray_0() {
+        int[] array = {0};
+        int[] expected = {0};
+        int[] actual = arrays.reverseArray(array);
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testReverseArray_1_1() {
+        int[] array = {1};
+        int[] expected = {1};
+        int[] actual = arrays.reverseArray(array);
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testReverseArray_1_2() {
+        int[] array = {2};
+        int[] expected = {2};
+        int[] actual = arrays.reverseArray(array);
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testReverseArray_1_3() {
+        int[] array = {1,2};
+        int[] expected = {2,1};
+        int[] actual = arrays.reverseArray(array);
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testReverseArray_1_4() {
+        int[] array = {0,1,2};
+        int[] expected = {2,1,0};
+        int[] actual = arrays.reverseArray(array);
+        assertArrayEquals(expected, actual);
+    }
     @Test
     public void testReverseArray_1() {
         int[] array = {1, 2, 3, 4, 5};
@@ -175,6 +298,14 @@ public class ArraysTest {
         int[] actual = arrays.reverseArray(array);
         assertArrayEquals(expected, actual);
     }
+    @Test
+    public void testReverseArray_3() {
+        int[] array = {1, 2, -10, 20, -3, 3, 4, 5};
+        int[] expected = {5, 4, 3, -3, 20, -10, 2, 1};
+        int[] actual = arrays.reverseArray(array);
+        assertArrayEquals(expected, actual);
+    }
+
     @Test
     public void testReverseArray_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -192,34 +323,94 @@ public class ArraysTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void testShowNoEven_2() {
+    public void testShowNoEven_0() {
         int[] array = {0};
         int expected = 0;
         int actual = arrays.showNoEven(array);
         assertEquals(expected, actual);
     }
     @Test
+    public void testShowNoEven_1() {
+        int[] array = {1};
+        int expected = 1;
+        int actual = arrays.showNoEven(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testShowNoEven_1_1() {
+        int[] array = {2};
+        int expected = 0;
+        int actual = arrays.showNoEven(array);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testShowNoEven_1_2() {
+        int[] array = {0,1,2};
+        int expected = 1;
+        int actual = arrays.showNoEven(array);
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testShowNoEven_3() {
-        int[] array = {1, 2, 3, 12,-1, -2,-5, 6, 8, 10, 15};
+        int[] array = {1, 2, 3, 12, -1, -2, -5, 6, 8, 10, 15};
         int expected = 5;
         int actual = arrays.showNoEven(array);
         assertEquals(expected, actual);
     }
+
     @Test
     public void testShowNoEven_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             arrays.reverseArray(null);
         }, "Array cannot be is empty.");
     }
+
     //============================_7th_method_end_==================================================
     //============================_8th_method_start_================================================
     @Test
-    public void changer() {
+    public void testChanger_0() {
+        int[] array = {0};
+        int[] expected = {0};
+        int[] actual = arrays.changer(array);
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testChanger_1() {
+        int[] array = {1};
+        int[] expected = {1};
+        int[] actual = arrays.changer(array);
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testChanger_2() {
+        int[] array = {2};
+        int[] expected = {2};
+        int[] actual = arrays.changer(array);
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testChanger_2_1() {
+        int[] array = {0,2};
+        int[] expected = {2,0};
+        int[] actual = arrays.changer(array);
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testChanger_3() {
         int[] array = {1, 2, 3, 4, 5, 6};
         int[] expected = {4, 5, 6, 1, 2, 3};
         int[] actual = arrays.changer(array);
         assertArrayEquals(expected, actual);
     }
+    @Test
+    public void testChanger_4() {
+        int[] array = {1, 2, 3, 4, 5, 6};
+        int[] expected = {4, 5, 6, 1, 2, 3};
+        int[] actual = arrays.changer(array);
+        assertArrayEquals(expected, actual);
+    }
+
     @Test
     public void testChanger_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -230,12 +421,41 @@ public class ArraysTest {
     //============================_8th_method_end_==================================================
     //============================_9th_method_start_================================================
     @Test
+    public void bubbleSort_0() {
+        int[] arr = {0};
+        int[] actual = arrays.bubbleSort(arr);
+        int[] expected = {0};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void bubbleSort_1() {
+        int[] arr = {1};
+        int[] actual = arrays.bubbleSort(arr);
+        int[] expected = {1};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void bubbleSort_2() {
+        int[] arr = {2};
+        int[] actual = arrays.bubbleSort(arr);
+        int[] expected = {2};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void bubbleSort_3() {
+        int[] arr = {1,2,3,4};
+        int[] actual = arrays.bubbleSort(arr);
+        int[] expected = {1,2,3,4};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
     public void bubbleSort() {
         int[] arr = {9, 5, 2, 3, 1, 7, 8, 10};
         int[] actual = arrays.bubbleSort(arr);
         int[] expected = {1, 2, 3, 5, 7, 8, 9, 10};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void testBubbleSort_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -244,12 +464,55 @@ public class ArraysTest {
     }
 
     @Test
+    public void selectSort_0() {
+        int[] arr = {0};
+        int[] actual = arrays.selectSort(arr);
+        int[] expected = {0};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void selectSort_1() {
+        int[] arr = {1};
+        int[] actual = arrays.selectSort(arr);
+        int[] expected = {1};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void selectSort_2() {
+        int[] arr = {2};
+        int[] actual = arrays.selectSort(arr);
+        int[] expected = {2};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void selectSort_3() {
+        int[] arr = {0,1,2,3,4,5};
+        int[] actual = arrays.selectSort(arr);
+        int[] expected = {0,1,2,3,4,5};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void selectSort_4() {
+        int[] arr = {-3,-2,-1,0,1,2,3,4,5};
+        int[] actual = arrays.selectSort(arr);
+        int[] expected = {-3,-2,-1,0,1,2,3,4,5};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void selectSort_5() {
+        int[] arr = {9, 5, -2,-3, -1, 7, 8, 10};
+        int[] actual = arrays.selectSort(arr);
+        int[] expected = {-3, -2, -1, 5, 7, 8, 9, 10};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
     public void selectSort() {
         int[] arr = {9, 5, 2, 3, 1, 7, 8, 10};
         int[] actual = arrays.selectSort(arr);
         int[] expected = {1, 2, 3, 5, 7, 8, 9, 10};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void testSelectSort_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
