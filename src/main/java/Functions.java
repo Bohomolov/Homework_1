@@ -1,13 +1,15 @@
+import utils.Constants;
+
 public class Functions {
-    public String[] eng20 = {"", "One ", "Two ", "Three ", "Four ", "Five ", "Six ", "Seven ", "Eight ", "Nine ",
+    public final String[] eng20 = {"", "One ", "Two ", "Three ", "Four ", "Five ", "Six ", "Seven ", "Eight ", "Nine ",
             "Ten ", "Eleven ", "Twelve ", "Thirteen ", "Fourteen ", "Fifteen ", "Sixteen ", "Seventeen ", "Eighteen ", "Nineteen "};
-    public String[] eng100 = {"", "", "Twenty ", "Thirty ", "Forty ", "Fifty ", "Sixty ", "Seventy ", "Eighty ", "Ninety "};
-    public String[] eng1000 = {"", "One hundred ", "Two hundred ", "Three hundred ", "Four hundred ", "Five hundred ",
+    public final String[] eng100 = {"", "", "Twenty ", "Thirty ", "Forty ", "Fifty ", "Sixty ", "Seventy ", "Eighty ", "Ninety "};
+    public final String[] eng1000 = {"", "One hundred ", "Two hundred ", "Three hundred ", "Four hundred ", "Five hundred ",
             "Six hundred ", "Seven hundred ", "Eight hundred ", "Nine hundred "};
 
     public String showDayOfTheWeek(int argument) {
         if (argument <= 0 || argument >= 8) {
-            throw new IllegalArgumentException("Incorrect value! The number should be equals more that 0 and less that 8.");
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_1);
         }
         String[] daysOfWeek = {"", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
         return daysOfWeek[argument];
@@ -15,7 +17,7 @@ public class Functions {
 
     public String convertNumberToString(int argument) {
         if (argument <= 0) {
-            throw new IllegalArgumentException("Incorrect value! The number should be equals 1 or more.");
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_1);
         }
         String result = "";
         result = eng20[returnCorrectIndex(argument)];

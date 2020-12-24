@@ -1,3 +1,5 @@
+import utils.Constants;
+
 public class Conditions {
     //#=====================================_1ST_===========================================
     public int getSumOrMultiply(int a, int b) {
@@ -7,23 +9,23 @@ public class Conditions {
     public String showQuarter(int x, int y) {
         String result;
         if (x > 0 && y > 0) {
-            result = "I quarter";
+            result = Constants.I_QUARTER;
         } else if (x < 0 && y > 0) {
-            result = "II quarter";
+            result = Constants.II_QUARTER;
         } else if (x < 0 && y < 0) {
-            result = "III quarter";
+            result = Constants.III_QUARTER;
         } else if (x > 0 && y < 0) {
-            result = "IV quarter";
+            result = Constants.IV_QUARTER;
         } else if (x == 0 && y < 0) {
-            result = "Your point between III and IV quarter";
+            result = Constants.BETWEEN_III_AND_IV_QUARTER;
         } else if (x == 0 && y > 0) {
-            result = "Your point between I and II quarter";
+            result = Constants.BETWEEN_I_AND_II_QUARTER;
         } else if (x > 0) {
-            result = "Your point between I and IV quarter";
+            result = Constants.BETWEEN_I_AND_IV_QUARTER;
         } else if (x < 0) {
-            result = "Your point between II and III quarter";
+            result = Constants.BETWEEN_III_AND_IV_QUARTER;
         } else {
-            result = "Your point equals O:O";
+            result = Constants._0_0_QUARTER;
         }
         return result;
     }
@@ -56,7 +58,7 @@ public class Conditions {
     //#=====================================_5TH_===============================================
     public String showRating(int argument) {
         if (argument < 0 || argument > 100 ){
-           throw new IllegalArgumentException("Incorrect value, correct value [0 - 100]");
+           throw new IllegalArgumentException(Constants.INCORRECT_VALUE_0__100);
         }
         String result;
         if (argument <= 19) {

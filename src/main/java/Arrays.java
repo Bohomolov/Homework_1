@@ -1,8 +1,10 @@
+import utils.Constants;
+
 public class Arrays {
     //#=====================================_1ST_===========================================
     public int findMinElementOfArray(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         int result = array[0];
         for (int i = 0; i < array.length; i++) {
@@ -16,7 +18,7 @@ public class Arrays {
     //#=====================================_2ND_==========================================
     public int findMaxElementOfArray(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         int result = array[0];
         for (int i = 0; i < array.length; i++) {
@@ -30,7 +32,7 @@ public class Arrays {
     //#=====================================_3RT_==========================================
     public int findIndexOFMinElementOfArray(int array[]) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         int result = 0;
         for (int i = 0; i < array.length; i++) {
@@ -44,7 +46,7 @@ public class Arrays {
     //#=====================================_4TH_==========================================
     public int findIndexOfMaxElementOfArray(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         int result = 0;
         for (int i = 0; i < array.length; i++) {
@@ -58,7 +60,7 @@ public class Arrays {
     //#=====================================_5TH_==========================================
     public int countSumOfArray(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         int result = 0;
         for (int i = 0; i < array.length; i++) {
@@ -72,7 +74,7 @@ public class Arrays {
     //#=====================================_6TH_==========================================
     public int[] reverseArray(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         int[] tmp = new int[array.length];
         int back = array.length - 1;
@@ -89,7 +91,7 @@ public class Arrays {
     //#=====================================_7TH_==========================================
     public int showNoEven(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         int result = 0;
         for (int i = 0; i < array.length; i++) {
@@ -103,7 +105,7 @@ public class Arrays {
     //#=====================================_8TH_==========================================
     public int[] changer(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         int[] result = new int[array.length];
         int half = array.length / 2;
@@ -130,7 +132,7 @@ public class Arrays {
     //#=====================================_9TH_==========================================
     public int[] bubbleSort(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         for (int i = array.length; i > 0; i--) {
             for (int j = 0; j < array.length - 1; j++) {
@@ -145,7 +147,7 @@ public class Arrays {
     }
     public int[] selectSort(int[] array) {
         if (array == null ){
-            throw new IllegalArgumentException("Array cannot be is empty.");
+            throw new IllegalArgumentException(Constants.ARRAY_CANNOT_BE_EMPTY);
         }
         for (int i = 0; i < array.length; i++) {
             int min = array[i];

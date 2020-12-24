@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import utils.Constants;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,42 +20,42 @@ public class LoopsTest {
     //#=============================_2nd_method_start_===================================
     @Test
     public void testCheckIsNumberPrime_0() {
-        String expected = "This number is prime";
+        String expected = Constants.IS_PRIME;
         String actual = loops.checkIsNumberPrime(2);
         assertEquals(expected, actual);
     }
 
     @Test
     public void testCheckIsNumberPrime_0_1() {
-        String expected = "This number isn't prime";
+        String expected = Constants.ISN_T_PRIME;
         String actual = loops.checkIsNumberPrime(1);
         assertEquals(expected, actual);
     }
 
     @Test
     public void testCheckIsNumberPrime_1() {
-        String expected = "This number is prime";
+        String expected = Constants.IS_PRIME;
         String actual = loops.checkIsNumberPrime(5);
         assertEquals(expected, actual);
     }
 
     @Test
     public void testCheckIsNumberPrime_2() {
-        String expected = "This number isn't prime";
+        String expected = Constants.ISN_T_PRIME;
         String actual = loops.checkIsNumberPrime(158);
         assertEquals(expected, actual);
     }
 
     @Test
     public void testCheckIsNumberPrime_3() {
-        String expected = "This number isn't prime";
+        String expected = Constants.ISN_T_PRIME;
         String actual = loops.checkIsNumberPrime(6);
         assertEquals(expected, actual);
     }
 
     @Test
     public void testCheckIsNumberPrime_4() {
-        String expected = "This number is prime";
+        String expected = Constants.IS_PRIME;
         String actual = loops.checkIsNumberPrime(157);
         assertEquals(expected, actual);
     }
@@ -63,14 +64,14 @@ public class LoopsTest {
     public void testCheckIsNumberPrime_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.checkIsNumberPrime(0);
-        }, "Incorrect value! The number should be equals 2 or more.");
+        }, Constants.INCORRECT_VALUE_2);
     }
 
     @Test
     public void testCheckIsNumberPrime_exception_1() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.checkIsNumberPrime(-2);
-        }, "Incorrect value! The number should be equals 2 or more.");
+        }, Constants.INCORRECT_VALUE_2);
     }
 
     //#=============================_2nd_method_end_=====================================
@@ -98,14 +99,14 @@ public class LoopsTest {
 
     @Test
     public void testFindSqrt_3() {
-        String expected = "This number has no square.";
+        String expected = Constants.SQRT_ERROR;
         String actual = loops.findSqrt(189);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testFindSqrt_4() {
-        String expected = "This number has no square.";
+        String expected = Constants.SQRT_ERROR;
         String actual = loops.findSqrt(259);
         Assert.assertEquals(expected, actual);
     }
@@ -114,14 +115,50 @@ public class LoopsTest {
     public void testFindSqrt_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.findSqrt(0);
-        }, "Incorrect value! The number should be equals 1 or more.");
+        }, Constants.INCORRECT_VALUE_1);
     }
 
     @Test
     public void testFindSqrt_exception_1() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.findSqrt(-1);
-        }, "Incorrect value! The number should be equals 1 or more.");
+        }, Constants.INCORRECT_VALUE_1);
+    }
+    @Test
+    public void binarySearchTest_0(){
+        String actual = loops.binarySearchSqrt(0);
+        String expected = "0";
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void binarySearchTest_1(){
+        String actual = loops.binarySearchSqrt(1);
+        String expected = "1";
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void binarySearchTest_2(){
+        String actual = loops.binarySearchSqrt(2);
+        String expected = Constants.SQRT_ERROR;
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void binarySearchTest_3(){
+        String actual = loops.binarySearchSqrt(4);
+        String expected = "2";
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void binarySearchTest_4(){
+        String actual = loops.binarySearchSqrt(144);
+        String expected = "12";
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void binarySearchTest_Exception(){
+        Assertions.assertThrows(IllegalArgumentException.class,()->{
+            loops.binarySearchSqrt(-2);
+        },Constants.INCORRECT_VALUE_0);
     }
     //#=============================_3rd_method_end_=====================================
     //#=============================_4th_method_start_===================================
@@ -146,14 +183,14 @@ public class LoopsTest {
     public void testCountFactorial_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.countFactorial(0);
-        }, "Incorrect value! The number should be equals 1 or more.");
+        }, Constants.INCORRECT_VALUE_1);
     }
 
     @Test
     public void testCountFactorial_exception_1() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.countFactorial(-15);
-        }, "Incorrect value! The number should be equals 1 or more.");
+        }, Constants.INCORRECT_VALUE_1);
     }
 
     //#=============================_4th_method_end_=====================================
@@ -197,7 +234,7 @@ public class LoopsTest {
     public void testCountSumOfDigits_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.countSumOfDigits(45 - 789);
-        }, "Incorrect value! The number should be equals 0 or more.");
+        }, Constants.INCORRECT_VALUE_0);
     }
 
     //#=============================_5th_method_end_=====================================
@@ -240,13 +277,13 @@ public class LoopsTest {
     public void testReverseNumeral_exception_0() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.reverseNumeral(0);
-        }, "Incorrect value! The number should be equals 1 or more.");
+        }, Constants.INCORRECT_VALUE_1);
     }
 
     @Test
     public void testReverseNumeral_exception() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             loops.reverseNumeral(45 - 789);
-        }, "Incorrect value! The number should be equals 1 or more.");
+        }, Constants.INCORRECT_VALUE_1);
     }
 }
