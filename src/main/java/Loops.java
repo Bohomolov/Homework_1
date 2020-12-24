@@ -1,3 +1,5 @@
+import utils.Constants;
+
 public class Loops {
     //#=====================================_1ST_===========================================
     public String countSumEvenNumber() {
@@ -13,11 +15,11 @@ public class Loops {
     //#=====================================_2ND_==========================================
     public String checkIsNumberPrime(int argument) {
         String resultPrime = "";
-        if (argument == 1){
-            resultPrime = "This number isn't prime";
+        if (argument == 1) {
+            resultPrime = Constants.ISN_T_PRIME;
         }
         if (argument < 1) {
-            throw new IllegalArgumentException("Incorrect value! The number should be equals 2 or more.");
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_2);
         }
         int i = 2;
         while (i <= argument) {
@@ -25,9 +27,9 @@ public class Loops {
                 i++;
             } else {
                 if (argument == i) {
-                    resultPrime = "This number is prime";
+                    resultPrime = Constants.IS_PRIME;
                 } else {
-                    resultPrime = "This number isn't prime";
+                    resultPrime = Constants.ISN_T_PRIME;
                 }
                 break;
             }
@@ -38,7 +40,7 @@ public class Loops {
     //#=====================================_3RT_==========================================
     public String findSqrt(int argument) {
         if (argument <= 0) {
-            throw new IllegalArgumentException("Incorrect value! The number should be equals 1 or more.");
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_0);
         }
         String resultSqrt = "";
         for (int i = 1; i <= argument; i++) {
@@ -46,16 +48,37 @@ public class Loops {
                 resultSqrt += i;
             }
         }
-        if (resultSqrt.equals("")){
-            resultSqrt = "This number has no square.";
+        if (resultSqrt.equals("")) {
+            resultSqrt = Constants.SQRT_ERROR;
         }
         return resultSqrt;
     }
 
+    public String binarySearchSqrt(int argument) {
+        if (argument < 0) {
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_0);
+        }
+        String result = "";
+        int resultMath = argument;
+        while (resultMath * resultMath > argument) {
+            resultMath /= 2;
+        }
+        while (resultMath * resultMath < argument) {
+            resultMath++;
+        }
+        if (resultMath * resultMath != argument) {
+            result = Constants.SQRT_ERROR;
+            return result ;
+        }
+        result += resultMath;
+        return result;
+    }
+
+
     //#=====================================_4TH_==========================================
     public int countFactorial(int argument) {
         if (argument <= 0) {
-            throw new IllegalArgumentException("Incorrect value! The number should be equals 1 or more.");
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_1);
         }
         int result = 1;
         for (int i = 1; i <= argument; i++) {
@@ -67,7 +90,7 @@ public class Loops {
     //#=====================================_5TH_==========================================
     public int countSumOfDigits(int argument) {
         if (argument < 0) {
-            throw new IllegalArgumentException("Incorrect value! The number should be equals 0 or more.");
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_0);
         }
         int result = 0;
         while (argument > 0) {
@@ -80,7 +103,7 @@ public class Loops {
     //#=====================================_6TH_==========================================
     public String reverseNumeral(int argument) {
         if (argument <= 0) {
-            throw new IllegalArgumentException("Incorrect value! The number should be equals 1 or more.");
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_1);
         }
         String result = "";
         while (argument > 0) {
