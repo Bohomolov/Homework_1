@@ -38,12 +38,70 @@ public class Functions {
         return index;
     }
 
-    public String convertStringToNumber(String number) {
-        String result = "";
-        for (int i = 0; i < 20; i++) {
-            if (number == eng20[i]) {
-                result += i;
+    public int convertStringToNumber(String number) {
+        int result = 0;
+
+        String[] arrayStr = number.split(" ");
+        if (arrayStr.length == 1) {
+            int j = 0;
+            for (int i = 0; i < eng20.length; i++) {
+                if (eng20[i].strip().equalsIgnoreCase(arrayStr[0])) {
+                    result = i;
+                }
+                if (j < 10) {
+                    if (eng100[j].strip().equalsIgnoreCase(arrayStr[0])) {
+                        result = j * 10;
+
+                    }
+                    j++;
+                }
             }
+        } else if (arrayStr.length == 2) {
+            if (arrayStr[1].equalsIgnoreCase("hundred")) {
+                arrayStr[0] += " hundred";
+                for (int i = 0; i < eng1000.length; i++) {
+                    if (eng1000[i].strip().equalsIgnoreCase(arrayStr[0])) {
+                        result = i * 100;
+                    }
+                }
+            }
+            for (int j = 0; j < eng20.length; j++) {
+                if (eng20[j].strip().equalsIgnoreCase(arrayStr[1])) {
+                    result += j;
+                }
+            }
+            for (int i = 0; i < eng100.length; i++) {
+                if (eng100[i].strip().equalsIgnoreCase(arrayStr[0])) {
+                    result += i * 10;
+                }
+            }
+        } else if (arrayStr.length == 3 || arrayStr.length == 4) {
+            arrayStr[0] += " hundred";
+            int j = 0;
+            for (int i = 0; i < eng20.length; i++) {
+
+                if (eng20[i].strip().equalsIgnoreCase(arrayStr[2])) {
+                    result += i;
+                }
+                if (j < 10) {
+                    if (eng1000[j].strip().equalsIgnoreCase(arrayStr[0])) {
+                        result += j * 100;
+
+                    }
+                    if (eng100[j].strip().equalsIgnoreCase(arrayStr[2])) {
+                        result += j * 10;
+                    }
+                    if (arrayStr.length == 4) {
+                        if (eng20[j].strip().equalsIgnoreCase(arrayStr[3])) {
+                            result += j;
+                        }
+                    }
+                    j++;
+                }
+            }
+        }
+        if (result == 0) {
+            throw new IllegalArgumentException(Constants.INCORRECT_VALUE_S);
         }
         return result;
     }
